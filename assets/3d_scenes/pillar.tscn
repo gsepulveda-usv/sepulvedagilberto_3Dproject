@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://eou0p1ran07q"]
+
+[ext_resource type="PackedScene" uid="uid://cgeidi3e66agy" path="res://assets/dungeon_assets/building/pillar.glb" id="1_eqw8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_li4fu"]
+size = Vector3(1.4, 4, 1.4)
+
+[node name="Pillar" type="StaticBody3D" unique_id=1721236607]
+
+[node name="pillar2" parent="." unique_id=1075431727 instance=ExtResource("1_eqw8h")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2144832917]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 2, -5.9604645e-08)
+shape = SubResource("BoxShape3D_li4fu")
