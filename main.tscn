@@ -16,10 +16,11 @@ sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
 [sub_resource type="Environment" id="Environment_h2yge"]
 background_mode = 2
 background_color = Color(0.933207, 0.933207, 0.9332069, 1)
-background_energy_multiplier = 0.8
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_0xm2m")
-
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ig7tw"]
+ambient_light_source = 3
+ssao_enabled = true
+ssao_radius = 16.0
 
 [node name="Main" type="Node3D" unique_id=1422542819]
 
@@ -35,13 +36,9 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999998, 0)
 look_speed = 15.0
 
-[node name="Ceiling, Floors, and Walls" type="CSGCombiner3D" parent="." unique_id=105633440]
-transform = Transform3D(0.512, 0, 0, 0, 0.8, 0, 0, 0, 0.48000002, 2.1733663, 0.14629841, 8.603674)
-material_overlay = SubResource("ORMMaterial3D_ig7tw")
-use_collision = true
-
 [node name="Courtyard" type="CSGCombiner3D" parent="." unique_id=1437029648]
-transform = Transform3D(0.512, 0, 0, 0, 0.8, 0, 0, 0, 0.48000002, 2.1733663, 0.14629841, 8.603674)
+transform = Transform3D(0.46080002, 0, 0, 0, 0.4, 0, 0, 0, 0.48000002, 2.1733663, 0.14629841, 8.603674)
+use_collision = true
 
 [node name="Fountain Center" type="CSGCylinder3D" parent="Courtyard" unique_id=27215817]
 transform = Transform3D(0.23269679, 0, 0, 0, 0.65318394, 0, 0, 0, 0.18728094, 3.8693352, 6.550003, -79.129524)
@@ -87,263 +84,6 @@ rings = 5
 transform = Transform3D(0.46655998, 0, 0, 0, 0.432, 0, 0, 0, 0.448, -56.78865, 46.12161, -81.164734)
 radius = 43.4
 rings = 5
-
-[node name="Lighting" type="CSGCombiner3D" parent="." unique_id=954200634]
-
-[node name="Lightpost 01" type="CSGCylinder3D" parent="Lighting" unique_id=1033490540]
-transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, 21.041866, 6.7973404, 68.52615)
-use_collision = true
-radius = 2.9
-height = 23.125
-sides = 14
-
-[node name="Lightpost Top 01" type="CSGSphere3D" parent="Lighting/Lightpost 01" unique_id=1770725006]
-transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
-radius = 2.1000001
-
-[node name="Lightpost Sub 01" type="CSGBox3D" parent="Lighting/Lightpost 01" unique_id=226112789]
-transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
-operation = 2
-size = Vector3(4.3, 2.6000001, 4.4)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Lighting" unique_id=2004596658]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.225096, 16.144629, 68.424576)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-omni_range = 20.0
-omni_attenuation = 1.1
-
-[node name="Lightpost 02" type="CSGCylinder3D" parent="Lighting" unique_id=242072141]
-transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, -12.898822, 6.7973404, 68.52615)
-use_collision = true
-radius = 2.9
-height = 23.125
-sides = 14
-
-[node name="Lightpost Top 02" type="CSGSphere3D" parent="Lighting/Lightpost 02" unique_id=1057145769]
-transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
-radius = 2.1000001
-
-[node name="Lightpost Sub 02" type="CSGBox3D" parent="Lighting/Lightpost 02" unique_id=91785590]
-transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
-operation = 2
-size = Vector3(4.3, 2.6000001, 4.4)
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lighting" unique_id=723374373]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.414906, 16.044628, 68.52458)
-light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-omni_range = 20.0
-omni_attenuation = 1.1
-
-[node name="Lightpost 03" type="CSGCylinder3D" parent="Lighting" unique_id=1546890092]
-transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, 21.506351, 6.7973404, -43.290337)
-use_collision = true
-radius = 2.9
-height = 23.125
-sides = 14
-
-[node name="Lightpost Top 03" type="CSGSphere3D" parent="Lighting/Lightpost 03" unique_id=1177451301]
-transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
-radius = 2.1000001
-
-[node name="Lightpost Sub 03" type="CSGBox3D" parent="Lighting/Lightpost 03" unique_id=188777738]
-transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14001465, 16.515999, 0.040283203)
-operation = 2
-size = Vector3(4.3, 2.6000001, 4.4)
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="Lighting" unique_id=1233004685]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.845093, 16.744629, -43.195423)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-omni_range = 20.0
-omni_attenuation = 1.1
-
-[node name="Lightpost 04" type="CSGCylinder3D" parent="Lighting" unique_id=204970003]
-transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, -13.031533, 6.7973404, -43.356102)
-use_collision = true
-radius = 2.9
-height = 23.125
-sides = 14
-
-[node name="Lightpost Top 04" type="CSGSphere3D" parent="Lighting/Lightpost 04" unique_id=198076429]
-transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
-radius = 2.1000001
-
-[node name="Lightpost Sub 04" type="CSGBox3D" parent="Lighting/Lightpost 04" unique_id=2032068761]
-transform = Transform3D(2.8000002, 0, 0, 0, 1.52, 0, 0, 0, 2.8009782, -0.13999939, 16.168774, 0.3527527)
-operation = 2
-size = Vector3(4.3, 2.6000001, 4.4)
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="Lighting" unique_id=1414757348]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.434907, 15.944629, -43.635437)
-light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-omni_range = 20.0
-
-[node name="Ceiling Light 01" type="CSGSphere3D" parent="Lighting" unique_id=209691428]
-transform = Transform3D(1.9565626, 0, 0, 0, 4.245695, 0, 0, 0, 1.7252357, -36.172295, 18.164545, 44.391747)
-use_collision = true
-
-[node name="Ceiling Light Sub 01" type="CSGBox3D" parent="Lighting/Ceiling Light 01" unique_id=241167204]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.51281714, 0)
-operation = 2
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Lighting" unique_id=1699247664]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -36.23491, 17.564632, 44.584576)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-spot_range = 300.0
-spot_attenuation = 2.0
-spot_angle = 70.0
-
-[node name="Ceiling Light 02" type="CSGSphere3D" parent="Lighting" unique_id=419813367]
-transform = Transform3D(2.2360716, 0, 0, 0, 4.245695, 0, 0, 0, 2.1565444, 49.098225, 18.244543, 41.799744)
-use_collision = true
-
-[node name="Ceiling Light Sub 02" type="CSGBox3D" parent="Lighting/Ceiling Light 02" unique_id=1665556602]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.5128174, 0)
-operation = 2
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="Lighting" unique_id=1324654979]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.265083, 17.264635, 41.984573)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-spot_range = 300.0
-spot_attenuation = 2.0
-spot_angle = 70.0
-
-[node name="Ceiling Light 03" type="CSGSphere3D" parent="Lighting" unique_id=1607885654]
-transform = Transform3D(1.9565626, 0, 0, 0, 4.245695, 0, 0, 0, 1.7252357, -36.172295, 18.064545, 13.383744)
-use_collision = true
-
-[node name="Ceiling Light Sub 03" type="CSGBox3D" parent="Lighting/Ceiling Light 03" unique_id=350589620]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.51281714, 0)
-operation = 2
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="Lighting" unique_id=351522533]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -36.334908, 17.46463, 13.684573)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-spot_range = 300.0
-spot_attenuation = 2.0
-spot_angle = 70.0
-
-[node name="Ceiling Light 04" type="CSGSphere3D" parent="Lighting" unique_id=55360158]
-transform = Transform3D(2.2360716, 0, 0, 0, 4.245695, 0, 0, 0, 2.1565444, 49.098225, 18.144543, 12.831743)
-use_collision = true
-
-[node name="Ceiling Light Sub 04" type="CSGBox3D" parent="Lighting/Ceiling Light 04" unique_id=1739836207]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.5128174, 0)
-operation = 2
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="Lighting" unique_id=631022204]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.365097, 17.764633, 13.384578)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-spot_range = 300.0
-spot_attenuation = 2.0
-spot_angle = 70.0
-
-[node name="Ceiling Light 05" type="CSGSphere3D" parent="Lighting" unique_id=1850064740]
-transform = Transform3D(1.9565626, 0, 0, 0, 4.245695, 0, 0, 0, 1.7252357, -36.172295, 38.164543, 44.391747)
-use_collision = true
-
-[node name="Ceiling Light Sub 01" type="CSGBox3D" parent="Lighting/Ceiling Light 05" unique_id=75266263]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.51281714, 0)
-operation = 2
-
-[node name="SpotLight3D5" type="SpotLight3D" parent="Lighting" unique_id=1391891462]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -36.23491, 37.564632, 44.584576)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-spot_range = 300.0
-spot_attenuation = 2.0
-spot_angle = 70.0
-
-[node name="Ceiling Light 06" type="CSGSphere3D" parent="Lighting" unique_id=97517606]
-transform = Transform3D(2.2360716, 0, 0, 0, 4.245695, 0, 0, 0, 2.1565444, 49.098225, 38.244545, 41.799744)
-use_collision = true
-
-[node name="Ceiling Light Sub 02" type="CSGBox3D" parent="Lighting/Ceiling Light 06" unique_id=1469692482]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.5128174, 0)
-operation = 2
-
-[node name="SpotLight3D6" type="SpotLight3D" parent="Lighting" unique_id=757370924]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.265083, 37.264633, 41.984573)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-spot_range = 300.0
-spot_attenuation = 2.0
-spot_angle = 70.0
-
-[node name="Ceiling Light 07" type="CSGSphere3D" parent="Lighting" unique_id=1019888407]
-transform = Transform3D(1.9565626, 0, 0, 0, 4.245695, 0, 0, 0, 1.7252357, -36.172295, 38.064545, 18.983744)
-use_collision = true
-
-[node name="Ceiling Light Sub 03" type="CSGBox3D" parent="Lighting/Ceiling Light 07" unique_id=1291153000]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.51281714, 0)
-operation = 2
-
-[node name="SpotLight3D7" type="SpotLight3D" parent="Lighting" unique_id=1615718143]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -36.334908, 37.46463, 19.284573)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-spot_range = 300.0
-spot_attenuation = 2.0
-spot_angle = 70.0
-
-[node name="Ceiling Light 08" type="CSGSphere3D" parent="Lighting" unique_id=1716484170]
-transform = Transform3D(2.2360716, 0, 0, 0, 4.245695, 0, 0, 0, 2.1565444, 49.098225, 38.144543, 18.431744)
-use_collision = true
-
-[node name="Ceiling Light Sub 04" type="CSGBox3D" parent="Lighting/Ceiling Light 08" unique_id=260242903]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.5128174, 0)
-operation = 2
-
-[node name="SpotLight3D8" type="SpotLight3D" parent="Lighting" unique_id=1337441422]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.365097, 37.764633, 18.984577)
-light_color = Color(0.99, 0.78903, 0.41580003, 1)
-light_energy = 16.0
-light_size = 1.0
-light_specular = 16.0
-shadow_enabled = true
-spot_range = 300.0
-spot_attenuation = 2.0
-spot_angle = 70.0
 
 [node name="Stairs" type="CSGCombiner3D" parent="." unique_id=89680258]
 transform = Transform3D(0.512, 0, 0, 0, 0.8, 0, 0, 0, 0.48000002, 2.1733663, 66.0463, 8.603674)
@@ -10384,7 +10124,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.700003, 20.200006, 61.5000
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.700003, 20.200006, 61.500008)
 
 [node name="Wall217" parent="Front Wall" unique_id=1549034812 instance=ExtResource("2_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.700003, 24.200006, 61.500008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.800003, 24.200006, 61.500008)
 
 [node name="Wall218" parent="Front Wall" unique_id=1739627336 instance=ExtResource("2_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.700003, 24.200006, 61.500008)
@@ -11386,7 +11126,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.09999, 16.200006, 22.50002
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.1, 16.200006, 22.50003)
 
 [node name="Wall207" parent="Back Wall" unique_id=359933512 instance=ExtResource("2_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.099998, 16.200006, 22.500027)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.199997, 16.200006, 22.500027)
 
 [node name="Wall208" parent="Back Wall" unique_id=119927360 instance=ExtResource("2_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.100006, 16.200006, 22.500011)
@@ -20090,3 +19830,1076 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 4.2000003, -15.8)
 
 [node name="Wall Arched Window Gate4" parent="Courtyard Walls" unique_id=345789483 instance=ExtResource("6_5vw27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 4.2000003, -15.8)
+
+[node name="Ceiling Lights" type="CSGCombiner3D" parent="." unique_id=1777930229]
+
+[node name="Ceiling Light 01" type="CSGSphere3D" parent="Ceiling Lights" unique_id=209691428]
+transform = Transform3D(1.9565626, 0, 0, 0, 4.245695, 0, 0, 0, 1.7252357, -36.172295, 18.164545, 47.391747)
+use_collision = true
+
+[node name="Ceiling Light Sub 01" type="CSGBox3D" parent="Ceiling Lights/Ceiling Light 01" unique_id=241167204]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.51281714, 0)
+operation = 2
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Ceiling Lights" unique_id=1699247664]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -36.23491, 17.564632, 47.584576)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 300.0
+spot_attenuation = 2.0
+spot_angle = 70.0
+
+[node name="Ceiling Light 02" type="CSGSphere3D" parent="Ceiling Lights" unique_id=419813367]
+transform = Transform3D(2.2360716, 0, 0, 0, 4.245695, 0, 0, 0, 2.1565444, 49.098225, 18.244543, 45.499744)
+use_collision = true
+
+[node name="Ceiling Light Sub 02" type="CSGBox3D" parent="Ceiling Lights/Ceiling Light 02" unique_id=1665556602]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.5128174, 0)
+operation = 2
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Ceiling Lights" unique_id=1324654979]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.265083, 17.264635, 45.684574)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 300.0
+spot_attenuation = 2.0
+spot_angle = 70.0
+
+[node name="Ceiling Light 03" type="CSGSphere3D" parent="Ceiling Lights" unique_id=1607885654]
+transform = Transform3D(1.9565626, 0, 0, 0, 4.245695, 0, 0, 0, 1.7252357, -43.172295, 18.064545, 18.683744)
+use_collision = true
+
+[node name="Ceiling Light Sub 03" type="CSGBox3D" parent="Ceiling Lights/Ceiling Light 03" unique_id=350589620]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.51281714, 0)
+operation = 2
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Ceiling Lights" unique_id=351522533]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -43.334908, 17.46463, 18.984573)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 300.0
+spot_attenuation = 2.0
+spot_angle = 70.0
+
+[node name="Ceiling Light 04" type="CSGSphere3D" parent="Ceiling Lights" unique_id=55360158]
+transform = Transform3D(2.2360716, 0, 0, 0, 4.245695, 0, 0, 0, 2.1565444, 49.098225, 18.144543, 18.631744)
+use_collision = true
+
+[node name="Ceiling Light Sub 04" type="CSGBox3D" parent="Ceiling Lights/Ceiling Light 04" unique_id=1739836207]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.5128174, 0)
+operation = 2
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Ceiling Lights" unique_id=631022204]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.365097, 17.764633, 19.184578)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 300.0
+spot_attenuation = 2.0
+spot_angle = 70.0
+
+[node name="Ceiling Light 05" type="CSGSphere3D" parent="Ceiling Lights" unique_id=1850064740]
+transform = Transform3D(1.9565626, 0, 0, 0, 4.245695, 0, 0, 0, 1.7252357, -36.172295, 38.164543, 47.391747)
+use_collision = true
+
+[node name="Ceiling Light Sub 01" type="CSGBox3D" parent="Ceiling Lights/Ceiling Light 05" unique_id=75266263]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.51281714, 0)
+operation = 2
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Ceiling Lights" unique_id=1391891462]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -36.23491, 37.564632, 47.584576)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 300.0
+spot_attenuation = 2.0
+spot_angle = 70.0
+
+[node name="Ceiling Light 06" type="CSGSphere3D" parent="Ceiling Lights" unique_id=97517606]
+transform = Transform3D(2.2360716, 0, 0, 0, 4.245695, 0, 0, 0, 2.1565444, 49.098225, 38.244545, 46.199745)
+use_collision = true
+
+[node name="Ceiling Light Sub 02" type="CSGBox3D" parent="Ceiling Lights/Ceiling Light 06" unique_id=1469692482]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.5128174, 0)
+operation = 2
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Ceiling Lights" unique_id=757370924]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.265083, 37.264633, 46.384575)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 300.0
+spot_attenuation = 2.0
+spot_angle = 70.0
+
+[node name="Ceiling Light 07" type="CSGSphere3D" parent="Ceiling Lights" unique_id=1019888407]
+transform = Transform3D(1.9565626, 0, 0, 0, 4.245695, 0, 0, 0, 1.7252357, -36.172295, 38.064545, 18.983744)
+use_collision = true
+
+[node name="Ceiling Light Sub 03" type="CSGBox3D" parent="Ceiling Lights/Ceiling Light 07" unique_id=1291153000]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.51281714, 0)
+operation = 2
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="Ceiling Lights" unique_id=1615718143]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -36.334908, 37.46463, 19.284573)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 300.0
+spot_attenuation = 2.0
+spot_angle = 70.0
+
+[node name="Ceiling Light 08" type="CSGSphere3D" parent="Ceiling Lights" unique_id=1716484170]
+transform = Transform3D(2.2360716, 0, 0, 0, 4.245695, 0, 0, 0, 2.1565444, 49.098225, 38.144543, 19.231743)
+use_collision = true
+
+[node name="Ceiling Light Sub 04" type="CSGBox3D" parent="Ceiling Lights/Ceiling Light 08" unique_id=260242903]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, -0.5128174, 0)
+operation = 2
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="Ceiling Lights" unique_id=1337441422]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 49.365097, 37.764633, 19.784576)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+spot_range = 300.0
+spot_attenuation = 2.0
+spot_angle = 70.0
+
+[node name="Outdoor Lighting" type="CSGCombiner3D" parent="." unique_id=954200634]
+use_collision = true
+
+[node name="Lightpost 01" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=1033490540]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, 21.041866, 6.7973404, 68.52615)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 01" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 01" unique_id=1770725006]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 01" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 01" unique_id=226112789]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Outdoor Lighting" unique_id=2004596658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.225096, 16.144629, 68.424576)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 02" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=242072141]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, -12.898822, 6.7973404, 68.52615)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 02" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 02" unique_id=1057145769]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 02" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 02" unique_id=91785590]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Outdoor Lighting" unique_id=723374373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.914906, 16.044628, 68.52458)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 03" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=1546890092]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, 21.506351, 6.7973404, -43.290337)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 03" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 03" unique_id=1177451301]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 03" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 03" unique_id=188777738]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14001465, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Outdoor Lighting" unique_id=1233004685]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.845093, 16.744629, -43.195423)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 04" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=204970003]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, -13.031533, 6.7973404, -43.356102)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 04" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 04" unique_id=198076429]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 04" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 04" unique_id=2032068761]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.52, 0, 0, 0, 2.8009782, -0.13999939, 16.168774, 0.3527527)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Outdoor Lighting" unique_id=1414757348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.034907, 15.944629, -43.235435)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+
+[node name="Lightpost 05" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=2023519631]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, 21.041866, 6.7973404, -67.57385)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 01" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 05" unique_id=244614345]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 01" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 05" unique_id=1842426976]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Outdoor Lighting" unique_id=67891505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.225096, 16.144629, -67.67543)
+light_color = Color(0.99, 0.78903, 0.41580003, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 06" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=1105018528]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, -12.898822, 6.7973404, -67.57385)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 02" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 06" unique_id=97478608]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 02" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 06" unique_id=1761539351]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Outdoor Lighting" unique_id=481397858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.414906, 16.044628, -67.575424)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 07" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=1213808606]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, -71.998825, 6.7973404, -67.57385)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 02" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 07" unique_id=736633278]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 02" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 07" unique_id=1320519692]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Outdoor Lighting" unique_id=1084974959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.0149, 16.044628, -67.67543)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 08" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=1522347981]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, -71.998825, 6.7973404, -12.373852)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 02" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 08" unique_id=223570065]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 02" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 08" unique_id=1111490589]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Outdoor Lighting" unique_id=1621056500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.0149, 16.044628, -12.37543)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 09" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=1269094806]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, -71.998825, 6.7973404, 38.926147)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 02" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 09" unique_id=1185050380]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 02" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 09" unique_id=1260300460]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Outdoor Lighting" unique_id=953505049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.0149, 16.044628, 38.82457)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 10" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=519270145]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, 85.001175, 6.7973404, -67.57385)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 02" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 10" unique_id=9742148]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 02" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 10" unique_id=401889665]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Outdoor Lighting" unique_id=2059988315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6851, 16.044628, -67.67543)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 11" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=551123814]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, 85.001175, 6.7973404, -12.373852)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 02" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 11" unique_id=522551912]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 02" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 11" unique_id=1622839872]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Outdoor Lighting" unique_id=177713829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6851, 16.044628, -12.37543)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Lightpost 12" type="CSGCylinder3D" parent="Outdoor Lighting" unique_id=451201540]
+transform = Transform3D(0.165888, 0, 0, 0, 0.576, 0, 0, 0, 0.1536, 85.001175, 6.7973404, 38.926147)
+use_collision = true
+radius = 2.9
+height = 23.125
+sides = 14
+
+[node name="Lightpost Top 02" type="CSGSphere3D" parent="Outdoor Lighting/Lightpost 12" unique_id=616729723]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5200001, 0, 0, 0, 2.800979, 0, 14.299999, 0)
+radius = 2.1000001
+
+[node name="Lightpost Sub 02" type="CSGBox3D" parent="Outdoor Lighting/Lightpost 12" unique_id=183637036]
+transform = Transform3D(2.8000002, 0, 0, 0, 1.5199999, 0, 0, 0, 2.8009784, -0.14000702, 16.515999, 0.040283203)
+operation = 2
+size = Vector3(4.3, 2.6000001, 4.4)
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="Outdoor Lighting" unique_id=904574889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.6851, 16.044628, 38.82457)
+light_color = Color(0.99327475, 0.79220873, 0.41985896, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 16.0
+shadow_enabled = true
+omni_range = 20.0
+omni_attenuation = 1.1
+
+[node name="Torches - 1st Floor" type="CSGCombiner3D" parent="." unique_id=1519635629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.6, 0)
+
+[node name="Torch" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=1006591216]
+transform = Transform3D(0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0, 0, 1, 28.100002, 26.325, 32.8)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch" unique_id=78240153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch/Torch Head" unique_id=1681387479]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch" unique_id=1008065158]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.1
+
+[node name="Torch2" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=1897938777]
+transform = Transform3D(-0.93969274, 0.34202015, -8.7422784e-08, 0.34202015, 0.93969274, 0, 8.2150535e-08, -2.990035e-08, -1, -19, 26.725, 32.8)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch2" unique_id=2022111712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch2/Torch Head" unique_id=1704975850]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch2" unique_id=695740222]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch3" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=743794176]
+transform = Transform3D(1.232258e-07, -4.4850523e-08, -0.99999994, 0.34202012, 0.9396927, -1.7763567e-15, 0.93969274, -0.34202015, 1.3113417e-07, -10.299999, 26.725, 61)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch3" unique_id=1890010515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch3/Torch Head" unique_id=1972712764]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch3" unique_id=695440805]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch4" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=832032609]
+transform = Transform3D(1.232258e-07, -4.4850523e-08, -0.99999994, 0.34202012, 0.9396927, -1.7763567e-15, 0.93969274, -0.34202015, 1.3113417e-07, 19.500002, 26.725, 61)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch4" unique_id=1937861016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch4/Torch Head" unique_id=99921200]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch4" unique_id=1352307570]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch5" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=215871162]
+transform = Transform3D(-4.1075253e-08, 1.4950174e-08, 0.99999994, 0.34202015, 0.9396928, -3.5527137e-15, -0.93969285, 0.34202015, -4.371141e-08, 21.100002, 26.725, -15.399998)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch5" unique_id=318122597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch5/Torch Head" unique_id=1538308932]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch5" unique_id=187853992]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch6" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=1800935967]
+transform = Transform3D(-4.1075253e-08, 1.4950174e-08, 0.99999994, 0.34202015, 0.9396928, -3.5527137e-15, -0.93969285, 0.34202015, -4.371141e-08, -10.999999, 26.725, -15.399998)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch6" unique_id=1428401473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch6/Torch Head" unique_id=848065569]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch6" unique_id=1790103632]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch7" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=185337385]
+transform = Transform3D(1.2322582e-07, -4.4850527e-08, -0.99999994, 0.34202015, 0.9396928, -3.552714e-15, 0.93969285, -0.34202015, 1.3113419e-07, -44.8, 26.725, 4.2000017)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch7" unique_id=940214703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch7/Torch Head" unique_id=511382819]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch7" unique_id=647489866]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch8" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=1669685374]
+transform = Transform3D(1.2322582e-07, -4.4850527e-08, -0.99999994, 0.34202015, 0.9396928, -3.552714e-15, 0.93969285, -0.34202015, 1.3113419e-07, 55.2, 26.725, 4.2000017)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch8" unique_id=763575284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch8/Torch Head" unique_id=1470321213]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch8" unique_id=575327811]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch9" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=303948513]
+transform = Transform3D(-7.786724e-09, 1.4373768e-07, 1.0000004, 0.34202042, 0.93969387, -2.9802347e-08, -0.93969357, 0.34201995, -5.8013683e-08, -55.150112, 26.725, -61.95003)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch9" unique_id=818634169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch9/Torch Head" unique_id=1863159999]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch9" unique_id=397146262]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch10" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=882076945]
+transform = Transform3D(-0.9396931, 0.34202006, -8.742275e-08, 0.34202036, 0.9396935, -5.9604645e-08, 8.5973e-08, -1.6405981e-07, -1.0000006, -66.75003, 26.724998, -27.050018)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch10" unique_id=168955199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch10/Torch Head" unique_id=118986807]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch10" unique_id=804281691]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch11" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=1717415417]
+transform = Transform3D(-7.644736e-09, 2.0871425e-07, 1.0000004, 0.34202036, 0.939694, -2.9802317e-08, -0.93969357, 0.34201995, -5.8013654e-08, 66.44989, 26.725004, -61.95002)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch11" unique_id=781803882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch11/Torch Head" unique_id=1137175668]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch11" unique_id=1115596071]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch12" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=417907946]
+transform = Transform3D(-7.644736e-09, 2.0871425e-07, 1.0000004, 0.34202036, 0.939694, -2.9802317e-08, -0.93969357, 0.34201995, -5.8013654e-08, 66.44989, 26.725004, -61.95002)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch12" unique_id=2031585082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch12/Torch Head" unique_id=911240762]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch12" unique_id=1134020125]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch13" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=2125709989]
+transform = Transform3D(0.9396931, -0.34202006, -7.81597e-14, 0.3420204, 0.93969357, -2.9802322e-08, -9.617345e-09, 7.934845e-08, 1.0000008, 76.149956, 26.724997, -30.750015)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch13" unique_id=1131131065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch13/Torch Head" unique_id=904779986]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch13" unique_id=1626290938]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch14" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=2088525110]
+transform = Transform3D(0.9396931, -0.34202006, -7.81597e-14, 0.3420204, 0.93969357, -2.9802322e-08, -9.617345e-09, 7.934845e-08, 1.0000008, 76.149956, 26.724997, -3.7500153)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch14" unique_id=82574134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch14/Torch Head" unique_id=821597456]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch14" unique_id=1913444752]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch15" type="CSGCylinder3D" parent="Torches - 1st Floor" unique_id=1631846982]
+transform = Transform3D(-0.93969303, 0.3420201, -8.742274e-08, 0.34202033, 0.9396934, -5.9604638e-08, 8.5973e-08, -1.6405983e-07, -1.0000006, -66.75002, 26.725004, -3.7500153)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 1st Floor/Torch15" unique_id=1980059979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 1st Floor/Torch15/Torch Head" unique_id=98701059]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 1st Floor/Torch15" unique_id=1640702318]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torches - 2nd Floor" type="CSGCombiner3D" parent="." unique_id=670860604]
+
+[node name="Torch" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=495348202]
+transform = Transform3D(0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0, 0, 1, 28.100002, 26.325, 32.8)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch" unique_id=1112238414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch/Torch Head" unique_id=1486839246]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch" unique_id=2141305177]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.1
+
+[node name="Torch2" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=137937822]
+transform = Transform3D(-0.93969274, 0.34202015, -8.7422784e-08, 0.34202015, 0.93969274, 0, 8.2150535e-08, -2.990035e-08, -1, -19, 26.725, 32.8)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch2" unique_id=1798765054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch2/Torch Head" unique_id=1045206402]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch2" unique_id=2002138751]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch3" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=1250934182]
+transform = Transform3D(1.232258e-07, -4.4850523e-08, -0.99999994, 0.34202012, 0.9396927, -1.7763567e-15, 0.93969274, -0.34202015, 1.3113417e-07, -10.299999, 26.725, 61)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch3" unique_id=434968315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch3/Torch Head" unique_id=719044244]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch3" unique_id=355830649]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch4" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=836406714]
+transform = Transform3D(1.232258e-07, -4.4850523e-08, -0.99999994, 0.34202012, 0.9396927, -1.7763567e-15, 0.93969274, -0.34202015, 1.3113417e-07, 19.500002, 26.725, 61)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch4" unique_id=1420455826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch4/Torch Head" unique_id=1298786847]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch4" unique_id=365934797]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch5" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=888745048]
+transform = Transform3D(-4.1075253e-08, 1.4950174e-08, 0.99999994, 0.34202015, 0.9396928, -3.5527137e-15, -0.93969285, 0.34202015, -4.371141e-08, 21.100002, 26.725, -15.399998)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch5" unique_id=1805254168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch5/Torch Head" unique_id=1689068414]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch5" unique_id=1062490159]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch6" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=989428934]
+transform = Transform3D(-4.1075253e-08, 1.4950174e-08, 0.99999994, 0.34202015, 0.9396928, -3.5527137e-15, -0.93969285, 0.34202015, -4.371141e-08, -10.999999, 26.725, -15.399998)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch6" unique_id=324833989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch6/Torch Head" unique_id=1315869562]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch6" unique_id=1090031637]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch7" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=1235076765]
+transform = Transform3D(1.2322582e-07, -4.4850527e-08, -0.99999994, 0.34202015, 0.9396928, -3.552714e-15, 0.93969285, -0.34202015, 1.3113419e-07, -44.8, 26.725, 4.2000017)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch7" unique_id=363183965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch7/Torch Head" unique_id=795992042]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch7" unique_id=1291681061]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch8" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=518333342]
+transform = Transform3D(1.2322582e-07, -4.4850527e-08, -0.99999994, 0.34202015, 0.9396928, -3.552714e-15, 0.93969285, -0.34202015, 1.3113419e-07, 55.2, 26.725, 4.2000017)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch8" unique_id=1880288740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch8/Torch Head" unique_id=263114133]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch8" unique_id=527866825]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch9" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=1386237073]
+transform = Transform3D(-7.786724e-09, 1.4373768e-07, 1.0000004, 0.34202042, 0.93969387, -2.9802347e-08, -0.93969357, 0.34201995, -5.8013683e-08, -55.150112, 26.725, -61.95003)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch9" unique_id=330252791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch9/Torch Head" unique_id=1739151143]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch9" unique_id=1284382880]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch10" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=1351832680]
+transform = Transform3D(-0.9396931, 0.34202006, -8.742275e-08, 0.34202036, 0.9396935, -5.9604645e-08, 8.5973e-08, -1.6405981e-07, -1.0000006, -66.75003, 26.724998, -27.050018)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch10" unique_id=150941199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch10/Torch Head" unique_id=1732587288]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch10" unique_id=495789800]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch11" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=1280635888]
+transform = Transform3D(-7.644736e-09, 2.0871425e-07, 1.0000004, 0.34202036, 0.939694, -2.9802317e-08, -0.93969357, 0.34201995, -5.8013654e-08, 66.44989, 26.725004, -61.95002)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch11" unique_id=1213303299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch11/Torch Head" unique_id=98863557]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch11" unique_id=490214077]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch12" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=128361824]
+transform = Transform3D(-7.644736e-09, 2.0871425e-07, 1.0000004, 0.34202036, 0.939694, -2.9802317e-08, -0.93969357, 0.34201995, -5.8013654e-08, 66.44989, 26.725004, -61.95002)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch12" unique_id=2013600696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch12/Torch Head" unique_id=949271393]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch12" unique_id=987440158]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch13" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=1528524627]
+transform = Transform3D(0.9396931, -0.34202006, -7.81597e-14, 0.3420204, 0.93969357, -2.9802322e-08, -9.617345e-09, 7.934845e-08, 1.0000008, 76.149956, 26.724997, -30.750015)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch13" unique_id=345175830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch13/Torch Head" unique_id=67707733]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch13" unique_id=967423257]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch14" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=276034737]
+transform = Transform3D(0.9396931, -0.34202006, -7.81597e-14, 0.3420204, 0.93969357, -2.9802322e-08, -9.617345e-09, 7.934845e-08, 1.0000008, 76.149956, 26.724997, -3.7500153)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch14" unique_id=740876119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch14/Torch Head" unique_id=1206621381]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch14" unique_id=392201277]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
+
+[node name="Torch15" type="CSGCylinder3D" parent="Torches - 2nd Floor" unique_id=1688620838]
+transform = Transform3D(-0.93969303, 0.3420201, -8.742274e-08, 0.34202033, 0.9396934, -5.9604638e-08, 8.5973e-08, -1.6405983e-07, -1.0000006, -66.75002, 26.725004, -3.7500153)
+radius = 0.05
+height = 0.35
+sides = 16
+
+[node name="Torch Head" type="CSGSphere3D" parent="Torches - 2nd Floor/Torch15" unique_id=1829125862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29999924, 0)
+radius = 0.2
+
+[node name="Torch Head Sub" type="CSGBox3D" parent="Torches - 2nd Floor/Torch15/Torch Head" unique_id=1045249100]
+transform = Transform3D(0.43083686, -1.4901161e-08, 0, -1.4901161e-08, 0.2798298, 0, 0, 0, 0.55, -1.1444092e-05, 0.10000229, 0)
+operation = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Torches - 2nd Floor/Torch15" unique_id=1942035395]
+transform = Transform3D(0.98480785, -0.17364824, 0, 0.17364824, 0.98480785, 0, 0, 0, 1, 0.042835236, 0.41008186, 0)
+light_color = Color(0.8728542, 0.5381749, 3.080368e-05, 1)
+light_energy = 10.0
+omni_range = 12.3
