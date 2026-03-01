@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bpi7j1fjh5nas"]
+
+[ext_resource type="PackedScene" uid="uid://c33iww8mxghhc" path="res://assets/blender/Book_Open.glb" id="1_l3nq6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ndn1"]
+size = Vector3(2, 0.2, 2)
+
+[node name="Book_Open" type="StaticBody3D" unique_id=1356511]
+
+[node name="Book_Open" parent="." unique_id=1490131448 instance=ExtResource("1_l3nq6")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=125234166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999994, 0)
+shape = SubResource("BoxShape3D_5ndn1")

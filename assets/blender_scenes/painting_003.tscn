@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d2de8m0bs33gq"]
+
+[ext_resource type="PackedScene" uid="uid://bs3ygolx4cuvv" path="res://assets/blender/Painting.003.glb" id="1_ox7a0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmbvr"]
+size = Vector3(3.9, 2.4, 0.2)
+
+[node name="Painting_003" type="StaticBody3D" unique_id=248207057]
+
+[node name="Painting_003" parent="." unique_id=1017728326 instance=ExtResource("1_ox7a0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=109898463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8500001, 0, 2.9802322e-08)
+shape = SubResource("BoxShape3D_rmbvr")

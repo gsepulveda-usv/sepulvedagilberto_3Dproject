@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dqqa5f2l7vhtw"]
+
+[ext_resource type="PackedScene" uid="uid://07st80vvfo1e" path="res://assets/blender/Shield.glb" id="1_8hnhq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4mbt"]
+size = Vector3(0.3, 2.6000001, 2.2)
+
+[node name="Shield" type="StaticBody3D" unique_id=1239815986]
+
+[node name="Shield" parent="." unique_id=438555060 instance=ExtResource("1_8hnhq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2133823791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050000038, -0.20000017, 2.9802322e-08)
+shape = SubResource("BoxShape3D_b4mbt")

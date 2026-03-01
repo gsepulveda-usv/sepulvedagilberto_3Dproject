@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b4rbxk4vyxms6"]
+
+[ext_resource type="PackedScene" uid="uid://5dnwtl5yhrx" path="res://assets/blender/Church_Podium.glb" id="1_0fpfb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7f4ui"]
+size = Vector3(16, 1.2, 11.400001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q7jti"]
+size = Vector3(4.2000003, 2.4, 4.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ufc6e"]
+size = Vector3(1.4, 3.6000001, 1.2)
+
+[node name="Church Podium" type="StaticBody3D" unique_id=537679523]
+
+[node name="Church_Podium" parent="." unique_id=485702865 instance=ExtResource("1_0fpfb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=251916249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.6, -2.2999997)
+shape = SubResource("BoxShape3D_7f4ui")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=607841686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 3, -0.05000025)
+shape = SubResource("BoxShape3D_q7jti")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=720103327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, -0.099999964, 0)
+shape = SubResource("BoxShape3D_ufc6e")

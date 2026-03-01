@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bsmnqjckqx8ja"]
+
+[ext_resource type="PackedScene" uid="uid://diw26t1qkhikp" path="res://assets/blender/Mug.glb" id="1_7jx03"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xjouc"]
+height = 3.9750001
+radius = 1.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lej7o"]
+size = Vector3(1.1, 2.5, 0.6)
+
+[node name="Mug" type="StaticBody3D" unique_id=561647058]
+
+[node name="Mug" parent="." unique_id=1089887077 instance=ExtResource("1_7jx03")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1937610687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9875001, 0)
+shape = SubResource("CylinderShape3D_xjouc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1965372150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6500001, 0.85000014, 0)
+shape = SubResource("BoxShape3D_lej7o")

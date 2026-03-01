@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cyshtpnkm3ixq"]
+
+[ext_resource type="PackedScene" uid="uid://j8dws17rhrs3" path="res://assets/blender/Church_Rug.glb" id="1_xfwn8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynvce"]
+size = Vector3(4.2000003, 0.2, 16.2)
+
+[node name="Church Rug" type="StaticBody3D" unique_id=1217603055]
+
+[node name="Church_Rug" parent="." unique_id=178081040 instance=ExtResource("1_xfwn8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=622750745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 2.9802322e-08, 0)
+shape = SubResource("BoxShape3D_ynvce")

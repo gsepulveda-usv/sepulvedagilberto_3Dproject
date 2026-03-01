@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cp8bp8uggghxg"]
+
+[ext_resource type="PackedScene" uid="uid://co2v2akgtijkf" path="res://assets/blender/Plate.glb" id="1_d10p6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_md7hl"]
+height = 0.225
+radius = 1.1
+
+[node name="Plate" type="StaticBody3D" unique_id=1357382148]
+
+[node name="Plate" parent="." unique_id=1120319167 instance=ExtResource("1_d10p6")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1971585953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.53749996, 0)
+shape = SubResource("CylinderShape3D_md7hl")

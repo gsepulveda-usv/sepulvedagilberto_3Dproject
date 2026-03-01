@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dhtg6pjulk38q"]
+
+[ext_resource type="PackedScene" uid="uid://ddqia584wcqig" path="res://assets/blender/Church_Pews.glb" id="1_363ic"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5w7fj"]
+size = Vector3(10.2, 2.2, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_godgu"]
+size = Vector3(0.2, 2.4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1fva"]
+size = Vector3(10.2, 1, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xtr81"]
+size = Vector3(10.2, 1.6, 0.4)
+
+[node name="Church Pews" type="StaticBody3D" unique_id=1666437415]
+
+[node name="Church_Pews" parent="." unique_id=671978695 instance=ExtResource("1_363ic")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2076526507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, -0.100000024, 0)
+shape = SubResource("BoxShape3D_5w7fj")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=259246713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2, 0, 0)
+shape = SubResource("BoxShape3D_godgu")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1704241695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.200001, 0, 0)
+shape = SubResource("BoxShape3D_godgu")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1951999530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, -0.7, -2.1)
+shape = SubResource("BoxShape3D_y1fva")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=624892689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3841858e-07, 0.6, -2.7000003)
+shape = SubResource("BoxShape3D_xtr81")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bb2dcs82tn0wk"]
+
+[ext_resource type="PackedScene" uid="uid://k1s0i5r2iwm3" path="res://assets/blender/Lamp_Post.glb" id="1_ho8js"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p8t2r"]
+height = 7.15
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wstq7"]
+height = 2.4500003
+radius = 0.90000004
+
+[node name="Lamp_Post" type="StaticBody3D" unique_id=147933663]
+
+[node name="Lamp_Post" parent="." unique_id=1761989646 instance=ExtResource("1_ho8js")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=14630357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.575, 0)
+shape = SubResource("CylinderShape3D_p8t2r")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1487540721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.425, 0)
+shape = SubResource("CylinderShape3D_wstq7")

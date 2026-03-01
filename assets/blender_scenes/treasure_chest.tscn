@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dyyv1vrthq5po"]
+
+[ext_resource type="PackedScene" uid="uid://bsupuh2speebb" path="res://assets/blender/Treasure_Chest.glb" id="1_mm8ba"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0pxjd"]
+size = Vector3(2.8, 2.6000001, 4.2000003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gop1"]
+size = Vector3(1.5, 2.7, 4.2000003)
+
+[node name="Treasure_Chest" type="StaticBody3D" unique_id=109931895]
+
+[node name="Treasure_Chest" parent="." unique_id=1150710079 instance=ExtResource("1_mm8ba")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=466037147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000001, -0.8000001, 0.4000002)
+shape = SubResource("BoxShape3D_0pxjd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=827827367]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95, 1.1500001, 0.4000002)
+shape = SubResource("BoxShape3D_3gop1")

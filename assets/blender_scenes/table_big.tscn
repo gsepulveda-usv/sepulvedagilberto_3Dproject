@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b5flaxuqq46ph"]
+
+[ext_resource type="PackedScene" uid="uid://bc2olv24c8ws7" path="res://assets/blender/Table.glb" id="1_dk7bi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2ttb"]
+size = Vector3(2.1000001, 1.3000001, 3.2)
+
+[node name="Table_Big" type="StaticBody3D" unique_id=224632865]
+
+[node name="Table2" parent="." unique_id=356576594 instance=ExtResource("1_dk7bi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=207274046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049999923, -1.0500001, -1.3000001)
+shape = SubResource("BoxShape3D_h2ttb")

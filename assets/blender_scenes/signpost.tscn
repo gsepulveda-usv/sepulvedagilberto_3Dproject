@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dt3ujmitvhlf5"]
+
+[ext_resource type="PackedScene" uid="uid://dch0ti5obyysu" path="res://assets/blender/Signpost.glb" id="1_3inmb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_koix2"]
+size = Vector3(0.5, 1.3000001, 2.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x5daa"]
+size = Vector3(0.2, 1.1, 0.3)
+
+[node name="Signpost" type="StaticBody3D" unique_id=1363361936]
+
+[node name="Signpost2" parent="." unique_id=725613737 instance=ExtResource("1_3inmb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=61502225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15000004, 0.75000006, -0.20000017)
+shape = SubResource("BoxShape3D_koix2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=904807271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-08, -0.45, -0.04999998)
+shape = SubResource("BoxShape3D_x5daa")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cpq5rf1ga3us4"]
+
+[ext_resource type="PackedScene" uid="uid://cbx1836xmvgex" path="res://assets/blender/Chair Small.glb" id="1_lfs8f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7137"]
+size = Vector3(1.2, 0.90000004, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntaua"]
+size = Vector3(1.2, 1.1, 0.2)
+
+[node name="Chair_Small" type="StaticBody3D" unique_id=1901640285]
+
+[node name="Chair Small" parent="." unique_id=1323259214 instance=ExtResource("1_lfs8f")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=816624229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19999999, -0.15, -0.4)
+shape = SubResource("BoxShape3D_y7137")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=198287986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19999999, 0.85, -0.8)
+shape = SubResource("BoxShape3D_ntaua")

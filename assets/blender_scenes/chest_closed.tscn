@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b2vpcrb7sxtbq"]
+
+[ext_resource type="PackedScene" uid="uid://c3n5rq0le5j73" path="res://assets/blender/Chest.glb" id="1_6kqn8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dlkdd"]
+size = Vector3(3, 3.1000001, 4.2000003)
+
+[node name="Chest_Closed" type="StaticBody3D" unique_id=1970020135]
+
+[node name="Chest2" parent="." unique_id=76130238 instance=ExtResource("1_6kqn8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2050103708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5500001, 5.9604645e-08)
+shape = SubResource("BoxShape3D_dlkdd")

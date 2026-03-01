@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2jpnuvbp0iyx"]
+
+[ext_resource type="PackedScene" uid="uid://ckfmnrjnigaxx" path="res://assets/blender/Candle.glb" id="1_ne17c"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_psolv"]
+height = 2.8
+
+[node name="Candle" type="StaticBody3D" unique_id=1127861050]
+
+[node name="Candle" parent="." unique_id=319741715 instance=ExtResource("1_ne17c")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1597755370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+shape = SubResource("CylinderShape3D_psolv")

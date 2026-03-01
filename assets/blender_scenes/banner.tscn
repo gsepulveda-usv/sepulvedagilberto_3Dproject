@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b5yto738ktlx7"]
+
+[ext_resource type="PackedScene" uid="uid://68cfjg53b1un" path="res://assets/blender/Banner.glb" id="1_bumbh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oas50"]
+size = Vector3(0.4, 9.2, 2.2)
+
+[node name="Banner" type="StaticBody3D" unique_id=1391057173]
+
+[node name="Banner" parent="." unique_id=1203569042 instance=ExtResource("1_bumbh")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1488114592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4901161e-08, 3.6, 2.9802322e-08)
+shape = SubResource("BoxShape3D_oas50")

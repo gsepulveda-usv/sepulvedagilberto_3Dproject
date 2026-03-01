@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bgde6sb6sjbnb"]
+
+[ext_resource type="PackedScene" uid="uid://iw2evivun4gs" path="res://assets/blender/Table Small .glb" id="1_eh6pw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gq5ea"]
+size = Vector3(2.8, 0.3, 2.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ld3mv"]
+size = Vector3(0.3, 1.2, 0.4)
+
+[node name="Table_Small" type="StaticBody3D" unique_id=142280950]
+
+[node name="Table Small " parent="." unique_id=136892882 instance=ExtResource("1_eh6pw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=889052024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, -0.049999982, -2.9802322e-08)
+shape = SubResource("BoxShape3D_gq5ea")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=568853475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -0.8, 1.2)
+shape = SubResource("BoxShape3D_ld3mv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1714118166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -0.8, 1.2)
+shape = SubResource("BoxShape3D_ld3mv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=709604896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -0.8, -1.2)
+shape = SubResource("BoxShape3D_ld3mv")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1674669066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -0.8, -1.2)
+shape = SubResource("BoxShape3D_ld3mv")

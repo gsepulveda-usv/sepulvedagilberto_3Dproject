@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dm4mgedjmknp5"]
+
+[ext_resource type="PackedScene" uid="uid://f1rhjeqp4n4h" path="res://assets/blender/Torch.glb" id="1_xchji"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_eenv2"]
+height = 5.9
+radius = 0.90000004
+
+[node name="Torch" type="StaticBody3D" unique_id=1642892865]
+
+[node name="Torch" parent="." unique_id=134111031 instance=ExtResource("1_xchji")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1077417179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.75, 0)
+shape = SubResource("CylinderShape3D_eenv2")

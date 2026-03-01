@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b8208djj4ak78"]
+
+[ext_resource type="PackedScene" uid="uid://8aev4k7rj7yj" path="res://assets/blender/Fountain.glb" id="1_ei16d"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0xlg0"]
+height = 0.900125
+radius = 1.9
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_prlv3"]
+height = 0.71250004
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vo45w"]
+height = 0.95000005
+radius = 1.4
+
+[node name="Fountain" type="StaticBody3D" unique_id=1466481029]
+
+[node name="Fountain" parent="." unique_id=1609828423 instance=ExtResource("1_ei16d")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=964811892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34968752, 0)
+shape = SubResource("CylinderShape3D_0xlg0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1989192023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43125007, 0)
+shape = SubResource("CylinderShape3D_prlv3")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=487784800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4062501, 0)
+shape = SubResource("CylinderShape3D_vo45w")
