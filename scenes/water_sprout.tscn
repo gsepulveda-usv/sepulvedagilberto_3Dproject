@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://8tsuwx66a0qp"]
+
+[ext_resource type="Texture2D" uid="uid://nvcy47cuopal" path="res://assets/brackeys/particles/alpha/muzzle_02_a.png" id="1_0evte"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tlwuf"]
+particle_flag_rotate_y = true
+emission_shape_scale = Vector3(10, 0.5, 10)
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+radial_velocity_min = -10.000022
+radial_velocity_max = -2.2351742e-05
+gravity = Vector3(0, 0.1, 0)
+radial_accel_min = -20.000002
+radial_accel_max = -2.2351742e-06
+tangential_accel_min = -10.000002
+tangential_accel_max = -2.2351742e-06
+
+[sub_resource type="Curve" id="Curve_bpvqh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4979253, 0.70414996), -1.4978964, -1.4978964, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mh2b"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.29723272, 0.6144511, 0.9999785, 1)
+albedo_texture = ExtResource("1_0evte")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_e7pi6"]
+material = SubResource("StandardMaterial3D_0mh2b")
+sections = 12
+section_segments = 10
+curve = SubResource("Curve_bpvqh")
+
+[node name="Water Sprout" type="Node3D" unique_id=550902341]
+
+[node name="Water Sprouts Up" type="GPUParticles3D" parent="." unique_id=573375553]
+amount = 15
+speed_scale = 0.5
+randomness = 0.5
+trail_enabled = true
+trail_lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_tlwuf")
+draw_pass_1 = SubResource("RibbonTrailMesh_e7pi6")

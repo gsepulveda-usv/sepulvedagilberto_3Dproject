@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://8plev4atf8h4"]
+
+[ext_resource type="Shader" uid="uid://drsqwramth8ro" path="res://shaders/water.tres" id="1_dgnej"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5eekb"]
+render_priority = 0
+shader = ExtResource("1_dgnej")
+shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_maf1y"]
+material = SubResource("ShaderMaterial_5eekb")
+
+[node name="Fountain Water" type="Node3D" unique_id=1026011293]
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=1845137669]
+transform = Transform3D(1, 0, 0, 0, -0.009999999, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_maf1y")

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://b6sxk0nv34ge3"]
+
+[ext_resource type="Texture2D" uid="uid://ciaa4hpyrs6bd" path="res://assets/brackeys/particles/alpha/flame_03_a.png" id="1_ktous"]
+
+[sub_resource type="Curve" id="Curve_ktous"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.50248754, 1), 0.0, 0.0, 0, 0, Vector2(0.9850746, 0.015660048), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_x50ei"]
+curve = SubResource("Curve_ktous")
+
+[sub_resource type="Gradient" id="Gradient_hmmd7"]
+offsets = PackedFloat32Array(0, 0.37202382, 0.5744048, 0.7172619, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.98039216, 0.23529412, 0.23529412, 1, 0.83043635, 0.7951708, 0.29837802, 1, 0.7827381, 0.7827381, 0.7827381, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rp4rw"]
+gradient = SubResource("Gradient_hmmd7")
+
+[sub_resource type="Curve" id="Curve_cyk1v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.6420582), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fhela"]
+curve = SubResource("Curve_cyk1v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_x50ei"]
+emission_shape_scale = Vector3(1.2, 2, 1.2)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 1, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_fhela")
+color_ramp = SubResource("GradientTexture1D_rp4rw")
+alpha_curve = SubResource("CurveTexture_x50ei")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hmmd7"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ktous")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_rp4rw"]
+material = SubResource("StandardMaterial3D_hmmd7")
+
+[node name="Flame" type="Node3D" unique_id=1765211436]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=571924215]
+amount = 700
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_x50ei")
+draw_pass_1 = SubResource("QuadMesh_rp4rw")

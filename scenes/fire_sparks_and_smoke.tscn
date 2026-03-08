@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://em18bs6ysa3j"]
+
+[ext_resource type="Texture2D" uid="uid://dvr7sqcgnu06c" path="res://assets/brackeys/particles/alpha/smoke_07_strong_a.png" id="1_gmgdq"]
+
+[sub_resource type="Gradient" id="Gradient_x2gdu"]
+colors = PackedColorArray(0.2065543, 0.2065543, 0.20655426, 1, 1, 0.6922649, 0.7319425, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gmgdq"]
+gradient = SubResource("Gradient_x2gdu")
+
+[sub_resource type="Curve" id="Curve_rkt4e"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_p8c6s"]
+curve = SubResource("Curve_rkt4e")
+
+[sub_resource type="Curve" id="Curve_0pscr"]
+_data = [Vector2(0, 0.9910515), 0.0, 0.0, 0, 0, Vector2(1, 0.8299777), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ukl25"]
+curve = SubResource("Curve_0pscr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hcasb"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0.3, 0)
+scale_min = 0.049999997
+scale_max = 0.099999994
+scale_curve = SubResource("CurveTexture_ukl25")
+color = Color(0.9999972, 0.58234876, 0.40346876, 1)
+color_initial_ramp = SubResource("GradientTexture1D_gmgdq")
+emission_curve = SubResource("CurveTexture_p8c6s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2gdu"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_gmgdq"]
+material = SubResource("StandardMaterial3D_x2gdu")
+
+[sub_resource type="Curve" id="Curve_x2gdu"]
+_data = [Vector2(0.004975125, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.41834456), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gmgdq"]
+curve = SubResource("Curve_x2gdu")
+
+[sub_resource type="Curve" id="Curve_a6k4o"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_41hfv"]
+curve = SubResource("Curve_a6k4o")
+
+[sub_resource type="Gradient" id="Gradient_owrlu"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rd8px"]
+gradient = SubResource("Gradient_owrlu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mim1n"]
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 1.5
+angle_curve = SubResource("CurveTexture_41hfv")
+direction = Vector3(0, 1, 0)
+spread = 25.0
+flatness = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.099999994
+scale_max = 0.29999998
+color = Color(0.19793725, 0.19793722, 0.19793722, 1)
+color_initial_ramp = SubResource("GradientTexture1D_rd8px")
+alpha_curve = SubResource("CurveTexture_gmgdq")
+anim_speed_min = 2.0
+anim_speed_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkt4e"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_gmgdq")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_p8c6s"]
+material = SubResource("StandardMaterial3D_rkt4e")
+
+[node name="Fire Sparks and Smoke" type="Node3D" unique_id=549595758]
+
+[node name="Sparks" type="GPUParticles3D" parent="." unique_id=1429410600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+amount = 16
+lifetime = 2.0
+speed_scale = 0.2
+explosiveness = 0.2
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_hcasb")
+draw_pass_1 = SubResource("BoxMesh_gmgdq")
+
+[node name="Smoke" type="GPUParticles3D" parent="." unique_id=417577647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+amount = 15
+lifetime = 0.5
+speed_scale = 0.05
+explosiveness = 0.2
+randomness = 1.0
+fixed_fps = 24
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_mim1n")
+draw_pass_1 = SubResource("QuadMesh_p8c6s")
