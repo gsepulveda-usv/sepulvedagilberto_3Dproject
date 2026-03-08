@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8208djj4ak78"]
 
 [ext_resource type="PackedScene" uid="uid://8aev4k7rj7yj" path="res://assets/blender/Fountain.glb" id="1_ei16d"]
+[ext_resource type="PackedScene" uid="uid://8tsuwx66a0qp" path="res://scenes/water_sprout.tscn" id="2_0xlg0"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0xlg0"]
 height = 0.900125
@@ -28,3 +29,6 @@ shape = SubResource("CylinderShape3D_prlv3")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=487784800]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4062501, 0)
 shape = SubResource("CylinderShape3D_vo45w")
+
+[node name="Water Sprout" parent="." unique_id=550902341 instance=ExtResource("2_0xlg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c2jpnuvbp0iyx"]
 
 [ext_resource type="PackedScene" uid="uid://ckfmnrjnigaxx" path="res://assets/blender/Candle.glb" id="1_ne17c"]
+[ext_resource type="PackedScene" uid="uid://em18bs6ysa3j" path="res://scenes/fire_sparks_and_smoke.tscn" id="2_psolv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_psolv"]
 height = 2.8
@@ -12,3 +13,12 @@ height = 2.8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1597755370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 shape = SubResource("CylinderShape3D_psolv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1071999631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8, 0)
+light_color = Color(0.93657583, 0.5773975, 0, 1)
+light_energy = 16.0
+omni_range = 12.0
+
+[node name="Fire Sparks and Smoke" parent="." unique_id=549595758 instance=ExtResource("2_psolv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3999999, 0)

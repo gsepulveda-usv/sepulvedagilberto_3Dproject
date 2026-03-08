@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cldu10u3hkudg"]
+
+[ext_resource type="PackedScene" uid="uid://dck4r1fdnr2gt" path="res://assets/blender/Knight_Armor.glb" id="1_l7ots"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5grmk"]
+size = Vector3(6.8618164, 2.0083008, 6.8620605)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_crmsv"]
+size = Vector3(6.776245, 17.339844, 3.5009155)
+
+[node name="Knight Armor" type="StaticBody3D" unique_id=1986181322]
+
+[node name="Knight_Armor" parent="." unique_id=727639287 instance=ExtResource("1_l7ots")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1157480100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02709961, -0.08178711, 0.009887695)
+shape = SubResource("BoxShape3D_5grmk")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=986209343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1873169, 9.590517, 0.09024048)
+shape = SubResource("BoxShape3D_crmsv")

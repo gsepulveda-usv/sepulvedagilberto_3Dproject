@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bfklu3xhcath2"]
+
+[ext_resource type="PackedScene" uid="uid://2b5xjt55eec1" path="res://assets/blender/Kings_Chair.glb" id="1_xuwof"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejj85"]
+size = Vector3(2.0243835, 1.329834, 1.770752)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_frfd6"]
+size = Vector3(2.0376587, 2.4018555, 0.27319336)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3x3o5"]
+size = Vector3(0.21289063, 0.7471924, 1.9077759)
+
+[node name="King\'s Chair" type="StaticBody3D" unique_id=1934200362]
+
+[node name="Kings_Chair" parent="." unique_id=1549724961 instance=ExtResource("1_xuwof")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1740717344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008346558, -1.3262798, 0.33532715)
+shape = SubResource("BoxShape3D_ejj85")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=597660690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0030822754, 0.5124512, -0.4300598)
+shape = SubResource("BoxShape3D_frfd6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=33962649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9060085, -0.3085327, 0.41342163)
+shape = SubResource("BoxShape3D_3x3o5")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=7259151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90301514, -0.3085327, 0.41342163)
+shape = SubResource("BoxShape3D_3x3o5")
