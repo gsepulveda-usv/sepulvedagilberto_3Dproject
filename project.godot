@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/sepic/Documents/Godot/sepulveda-gilberto-3d-game/movies/SepulvedaGilberto_3D_VFX_01.avi"
+movie_writer/movie_file="C:/Users/sepic/Documents/Godot/sepulveda-gilberto-3d-game/movies/SepulvedaGilberto_3D_PolishedLigting_01.avi"
 
 [input]
 
