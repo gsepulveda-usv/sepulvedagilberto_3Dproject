@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dusessxiru0j8"]
+
+[ext_resource type="PackedScene" uid="uid://mdyeajfv7toi" path="res://assets/blender/Chandelier_Small.glb" id="1_s5a88"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pcp1u"]
+height = 6.256836
+radius = 2.5976563
+
+[node name="Chandelier Small" type="StaticBody3D" unique_id=1816705497]
+
+[node name="Chandelier_Small" parent="." unique_id=814307349 instance=ExtResource("1_s5a88")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=597449696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.3053775, 0)
+shape = SubResource("CylinderShape3D_pcp1u")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2072946417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04162717, 6.187057, 1.9449711)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 12.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1148736300]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0277283, 6.187057, -0.020308733)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 12.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1640378123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9508631, 6.187057, -0.14630675)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 12.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=788195640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0016386509, 6.187057, -2.0863867)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 12.0
+shadow_enabled = true
+omni_range = 12.0

@@ -21,3 +21,87 @@ shape = SubResource("CylinderShape3D_hj0fx")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=946972020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3187494, 0)
 shape = SubResource("CylinderShape3D_0yjkq")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2067269829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04162717, 6.187057, 1.9449711)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=456832507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0277283, 6.187057, -0.020308733)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=784135386]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9508631, 6.187057, -0.14630675)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=128845730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0016386509, 6.187057, -2.0863867)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=2010565184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7583723, 2.087057, 2.844971)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1868441621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.027729, 2.087057, -0.020308733)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1046155557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0508633, 2.087057, -0.04630675)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="." unique_id=259400842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.698361, 2.087057, -2.8863866)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="." unique_id=915797311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7416277, 2.087057, 2.844971)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="." unique_id=1371885232]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.801639, 2.087057, -2.8863866)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="." unique_id=131259467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04162717, 2.087057, 4.044971)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="." unique_id=2003105128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0016386509, 2.087057, -3.9863868)
+light_color = Color(1, 0.8235294, 0.627451, 1)
+light_energy = 8.0
+shadow_enabled = true
+omni_range = 12.0

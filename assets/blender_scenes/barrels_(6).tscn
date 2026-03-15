@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://k55oi1gxsxcj"]
+
+[ext_resource type="PackedScene" uid="uid://crkg2o0ylhhru" path="res://assets/blender_scenes/barrel.tscn" id="1_46aa1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_46aa1"]
+size = Vector3(4.972275, 2.7885742, 4.9188232)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ch25"]
+size = Vector3(4.967346, 2.7924805, 2.4975586)
+
+[node name="Barrels (6)" type="StaticBody3D" unique_id=606795874]
+
+[node name="Barrel" parent="." unique_id=1111007474 instance=ExtResource("1_46aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2496331, 0, -1.2406489)
+
+[node name="Barrel2" parent="." unique_id=1661684018 instance=ExtResource("1_46aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2535228, 0, -1.2406489)
+
+[node name="Barrel3" parent="." unique_id=1812395563 instance=ExtResource("1_46aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2496331, 0, 1.23141)
+
+[node name="Barrel4" parent="." unique_id=1703677724 instance=ExtResource("1_46aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2535228, 0, 1.23141)
+
+[node name="Barrel5" parent="." unique_id=289006246 instance=ExtResource("1_46aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2496331, 2.8119102, -1.2406489)
+
+[node name="Barrel6" parent="." unique_id=1339070141 instance=ExtResource("1_46aa1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2535228, 2.8119102, -1.2406489)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1253144995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024681091, 0.006591797, -0.008117676)
+shape = SubResource("BoxShape3D_46aa1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=290745269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024261475, 2.810638, -1.2190638)
+shape = SubResource("BoxShape3D_8ch25")

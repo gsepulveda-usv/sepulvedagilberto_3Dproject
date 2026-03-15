@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ubrs0v1llpdl"]
+
+[ext_resource type="PackedScene" uid="uid://drhips7lr0qyy" path="res://assets/blender/Crate_002.glb" id="1_i8nbh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i8nbh"]
+size = Vector3(4.171753, 1.9994507, 4.1607666)
+
+[node name="Crates (4)" type="StaticBody3D" unique_id=1927970952]
+
+[node name="Crate" parent="." unique_id=23645025 instance=ExtResource("1_i8nbh")]
+
+[node name="Crate2" parent="." unique_id=1670236068 instance=ExtResource("1_i8nbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1300125, 0, 0)
+
+[node name="Crate3" parent="." unique_id=1634483268 instance=ExtResource("1_i8nbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.1300132)
+
+[node name="Crate4" parent="." unique_id=1490055747 instance=ExtResource("1_i8nbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1300125, 0, 2.1300132)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1960932862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0648804, 0.00015258789, 1.0671997)
+shape = SubResource("BoxShape3D_i8nbh")

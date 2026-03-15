@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://oa6uu1mvugqn"]
+
+[ext_resource type="PackedScene" uid="uid://crkg2o0ylhhru" path="res://assets/blender_scenes/barrel.tscn" id="1_0sxca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0sxca"]
+size = Vector3(4.972046, 2.8261108, 7.428528)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g1lgp"]
+size = Vector3(4.961487, 2.7944336, 2.4941406)
+
+[node name="Barrels (8)" type="StaticBody3D" unique_id=1650366000]
+
+[node name="Barrel" parent="." unique_id=1111007474 instance=ExtResource("1_0sxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2496331, 0, -1.2406489)
+
+[node name="Barrel2" parent="." unique_id=1661684018 instance=ExtResource("1_0sxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2535228, 0, -1.2406489)
+
+[node name="Barrel3" parent="." unique_id=1812395563 instance=ExtResource("1_0sxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2496331, 0, 1.23141)
+
+[node name="Barrel4" parent="." unique_id=1703677724 instance=ExtResource("1_0sxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2535228, 0, 1.23141)
+
+[node name="Barrel5" parent="." unique_id=289006246 instance=ExtResource("1_0sxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2496331, 2.8119102, -1.2406489)
+
+[node name="Barrel6" parent="." unique_id=1339070141 instance=ExtResource("1_0sxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2535228, 2.8119102, -1.2406489)
+
+[node name="Barrel7" parent="." unique_id=1512889026 instance=ExtResource("1_0sxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2496331, 0, 3.6850743)
+
+[node name="Barrel8" parent="." unique_id=2007300212 instance=ExtResource("1_0sxca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2535228, 0, 3.6850743)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=25040902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003112793, 0.03604126, 1.2255554)
+shape = SubResource("BoxShape3D_0sxca")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1841293823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0008239746, 2.8536153, -1.2367749)
+shape = SubResource("BoxShape3D_g1lgp")

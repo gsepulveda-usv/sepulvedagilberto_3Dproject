@@ -19,6 +19,7 @@ shape = SubResource("CylinderShape3D_eenv2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.9, 0)
 light_color = Color(1, 0.67058825, 0.5058824, 1)
 light_energy = 16.0
+shadow_enabled = true
 omni_range = 12.0
 
 [node name="Flame" parent="." unique_id=1765211436 instance=ExtResource("2_eenv2")]

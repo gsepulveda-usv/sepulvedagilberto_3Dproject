@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bhtt5jkt32uwe"]
+
+[ext_resource type="PackedScene" uid="uid://drhips7lr0qyy" path="res://assets/blender/Crate_002.glb" id="1_ucfrt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ucfrt"]
+size = Vector3(4.1828613, 1.9885254, 4.1711426)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnajg"]
+size = Vector3(4.17395, 2.038086, 2.0529785)
+
+[node name="Crates (6)" type="StaticBody3D" unique_id=246087393]
+
+[node name="Crate" parent="." unique_id=23645025 instance=ExtResource("1_ucfrt")]
+
+[node name="Crate2" parent="." unique_id=1670236068 instance=ExtResource("1_ucfrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1300125, 0, 0)
+
+[node name="Crate3" parent="." unique_id=1634483268 instance=ExtResource("1_ucfrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.1300132)
+
+[node name="Crate4" parent="." unique_id=1490055747 instance=ExtResource("1_ucfrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1300125, 0, 2.1300132)
+
+[node name="Crate5" parent="." unique_id=1067895561 instance=ExtResource("1_ucfrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0077682, 0)
+
+[node name="Crate6" parent="." unique_id=1958927101 instance=ExtResource("1_ucfrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1300125, 2.0077682, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=184181270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0631104, 0.00036621094, 1.0626221)
+shape = SubResource("BoxShape3D_ucfrt")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=45904045]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0670776, 2.0161898, -0.0028076172)
+shape = SubResource("BoxShape3D_qnajg")
